@@ -1,0 +1,31 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: MAIL-SERVICE
+  data:
+    mongodb:
+      authentication-database: admin
+      username: mongouser
+      password: mongopass
+      database: mail_service_db
+      port: 27018
+      host: host.docker.internal
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: 831d044886aa2b
+    password: 501c4ba547aa0b
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: group_id
+      auto-offset-reset: earliest
+    template:
+      default-topic: send_email_topic

@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_news_service
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  application:
+    name: NEWS-SERVICE
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: group_id
+      auto-offset-reset: earliest
+    template:
+      default-topic: send_email_topic
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
